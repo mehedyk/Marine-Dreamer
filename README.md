@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
+# Marine Dreamer | মেরিন একাডেমি ভর্তি কোচিং
 
-## Project info
+![Marine Dreamer](https://i.postimg.cc/59396Yjy/logo.jpg)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+> স্বপ্ন নয় দায়িত্ব - মেরিন একাডেমি এডমিশনে এক বিশ্বাসের নাম
 
-## How can I edit this code?
+A professional web platform for Marine Academy admission coaching in Bangladesh, helping aspiring cadets prepare for Bangladesh Marine Academy and National Maritime Institute entrance exams.
 
-There are several ways of editing your application.
+🌐 **Live Site**: [marine-dreamer.netlify.app](https://marine-dreamer.netlify.app)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🌊 Features
 
-Changes made via Lovable will be committed automatically to this repo.
+### 📚 Course Management
+- Comprehensive admission preparation courses
+- Detailed course information and curriculum
+- Flexible batch scheduling
+- Expert instructor profiles
 
-**Use your preferred IDE**
+### 📖 Study Materials
+- Extensive book collection catalog
+- Study guides and reference materials
+- Practice questions and mock tests
+- Previous year question papers
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 👥 Student Success
+- Success stories from previous cadets
+- Student testimonials and reviews
+- Achievement showcase
+- Career guidance
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 📱 Communication
+- Multiple contact channels
+- WhatsApp direct messaging
+- Social media integration
+- Easy inquiry submission
 
-Follow these steps:
+### 🎨 User Experience
+- Fully responsive design (mobile, tablet, desktop)
+- Bilingual interface (Bengali & English)
+- Smooth animations and transitions
+- Modern and intuitive navigation
+- Fast loading times
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📞 Contact & Social Media
 
-# Step 3: Install the necessary dependencies.
-npm i
+- 🌐 **Website**: [marine-dreamer.netlify.app](https://marine-dreamer.netlify.app)
+- 🟢 **WhatsApp**: [+880 1907-483862](https://wa.me/8801907483862)
+- 📘 **Facebook**: [Marine Dreamer](https://www.facebook.com/share/1Dv3vqJhxW/)
+- 🎥 **YouTube**: [@marinedreamer-157](https://youtube.com/@marinedreamer-157)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 📄 License
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Copyright © 2024 Marine Dreamer. All Rights Reserved.**
 
-**Use GitHub Codespaces**
+This project and its contents are proprietary and confidential. Unauthorized copying, modification, distribution, or use of this software, via any medium, is strictly prohibited without explicit written permission from Marine Dreamer.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Restrictions:
+- ❌ No copying or reproduction
+- ❌ No modification or derivative works
+- ❌ No distribution or public display
+- ❌ No commercial use
+- ❌ No reverse engineering
 
-## What technologies are used for this project?
+For licensing inquiries, please contact us through our official channels.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 👨‍💻 Developer
 
-## How can I deploy this project?
+Developed by [mehedy](https://github.com/mehedyk)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Marine Dreamer** - সমুদ্র তোমার অপেক্ষায় ⚓

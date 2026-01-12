@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Ocean-inspired color palette */
+  :root,
+  [data-theme="ocean"] {
+    /* Original Ocean Blue Theme */
     --background: 210 100% 8%;
     --foreground: 0 0% 100%;
 
@@ -37,7 +38,7 @@
 
     --radius: 1rem;
 
-    /* Ocean gradients */
+    /* Gradients */
     --gradient-ocean: linear-gradient(180deg, hsl(205 100% 35%) 0%, hsl(205 100% 20%) 50%, hsl(205 100% 8%) 100%);
     --gradient-surface: linear-gradient(180deg, hsl(199 89% 55%) 0%, hsl(205 100% 35%) 100%);
     --gradient-deep: linear-gradient(180deg, hsl(205 100% 8%) 0%, hsl(220 80% 5%) 100%);
@@ -49,38 +50,124 @@
 
     /* Fonts */
     --font-display: 'Montserrat', sans-serif;
-    --font-body: 'Inter', sans-serif;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --font-body: 'Hind Siliguri', sans-serif;
   }
 
-  .dark {
-    --background: 205 100% 6%;
-    --foreground: 200 100% 98%;
-    --card: 205 80% 12%;
-    --card-foreground: 200 100% 98%;
-    --popover: 205 80% 12%;
-    --popover-foreground: 200 100% 98%;
-    --primary: 199 89% 48%;
-    --primary-foreground: 200 100% 98%;
-    --secondary: 205 60% 20%;
-    --secondary-foreground: 200 100% 98%;
-    --muted: 205 50% 15%;
-    --muted-foreground: 200 30% 70%;
-    --accent: 174 72% 56%;
-    --accent-foreground: 205 100% 6%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 205 40% 25%;
-    --input: 205 40% 25%;
-    --ring: 199 89% 48%;
+  [data-theme="navy-gold"] {
+    /* Navy & Gold Professional Theme */
+    --background: 220 50% 8%;
+    --foreground: 45 20% 95%;
+
+    --card: 220 45% 14%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 220 45% 14%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 45 90% 55%;
+    --primary-foreground: 220 50% 8%;
+
+    --secondary: 220 40% 22%;
+    --secondary-foreground: 45 20% 95%;
+
+    --muted: 220 35% 18%;
+    --muted-foreground: 220 20% 60%;
+
+    --accent: 45 85% 50%;
+    --accent-foreground: 220 50% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 30% 25%;
+    --input: 220 30% 25%;
+    --ring: 45 90% 55%;
+
+    --gradient-ocean: linear-gradient(180deg, hsl(220 50% 18%) 0%, hsl(220 50% 12%) 50%, hsl(220 50% 8%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(45 70% 45%) 0%, hsl(220 50% 18%) 100%);
+    --gradient-deep: linear-gradient(180deg, hsl(220 50% 8%) 0%, hsl(230 60% 5%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 45% 16%) 0%, hsl(220 50% 10%) 100%);
+
+    --shadow-glow: 0 0 60px hsl(45 90% 55% / 0.25);
+    --shadow-card: 0 20px 60px hsl(220 50% 5% / 0.6);
+  }
+
+  [data-theme="teal-coral"] {
+    /* Vibrant Teal & Coral Theme */
+    --background: 180 50% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 180 45% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 180 45% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 174 70% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 40% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 180 35% 14%;
+    --muted-foreground: 180 20% 65%;
+
+    --accent: 16 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 30% 22%;
+    --input: 180 30% 22%;
+    --ring: 174 70% 42%;
+
+    --gradient-ocean: linear-gradient(180deg, hsl(174 50% 28%) 0%, hsl(180 45% 14%) 50%, hsl(180 50% 6%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(16 75% 55%) 0%, hsl(174 50% 28%) 100%);
+    --gradient-deep: linear-gradient(180deg, hsl(180 50% 6%) 0%, hsl(190 60% 4%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(180 45% 14%) 0%, hsl(180 50% 9%) 100%);
+
+    --shadow-glow: 0 0 60px hsl(174 70% 42% / 0.3);
+    --shadow-card: 0 20px 60px hsl(180 50% 4% / 0.5);
+  }
+
+  [data-theme="dark-electric"] {
+    /* Dark Mode with Electric Blue */
+    --background: 225 30% 6%;
+    --foreground: 210 20% 98%;
+
+    --card: 225 25% 11%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 225 25% 11%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 210 100% 60%;
+    --primary-foreground: 225 30% 6%;
+
+    --secondary: 225 22% 18%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 225 20% 14%;
+    --muted-foreground: 225 15% 55%;
+
+    --accent: 280 70% 65%;
+    --accent-foreground: 225 30% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 225 20% 20%;
+    --input: 225 20% 20%;
+    --ring: 210 100% 60%;
+
+    --gradient-ocean: linear-gradient(180deg, hsl(225 30% 14%) 0%, hsl(225 30% 9%) 50%, hsl(225 30% 6%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(210 100% 55%) 0%, hsl(225 30% 14%) 100%);
+    --gradient-deep: linear-gradient(180deg, hsl(225 30% 6%) 0%, hsl(240 35% 4%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(225 25% 13%) 0%, hsl(225 30% 8%) 100%);
+
+    --shadow-glow: 0 0 60px hsl(210 100% 60% / 0.35);
+    --shadow-card: 0 20px 60px hsl(225 30% 4% / 0.6);
   }
 }
 
@@ -103,6 +190,10 @@
 @layer components {
   .font-display {
     font-family: var(--font-display);
+  }
+
+  .font-bangla {
+    font-family: 'Hind Siliguri', sans-serif;
   }
 
   .gradient-ocean {
@@ -129,7 +220,7 @@
     box-shadow: var(--shadow-card);
   }
 
-  /* Floating animation for underwater feel */
+  /* Floating animation */
   @keyframes float {
     0%, 100% {
       transform: translateY(0px) rotate(0deg);
@@ -190,12 +281,12 @@
     animation: wave 20s linear infinite;
   }
 
-  /* Glass morphism for cards */
+  /* Glass morphism */
   .glass {
-    background: hsl(205 60% 15% / 0.6);
+    background: hsl(var(--muted) / 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsl(200 100% 98% / 0.1);
+    border: 1px solid hsl(var(--foreground) / 0.1);
   }
 
   /* Text gradient */

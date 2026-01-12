@@ -107,7 +107,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border/30 space-y-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground font-bangla text-center sm:text-left">
-              © 2024 Marine Dreamer. সর্বস্বত্ব সংরক্ষিত।
+              © 2026 Marine Dreamer. All rights reserved.
             </p>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Anchor className="w-4 h-4" />
@@ -118,14 +118,14 @@ const Footer = () => {
           {/* Made by Credit */}
           <div className="text-center">
             <p className="text-xs text-muted-foreground">
-              Made by{' '}
+              বানিয়েছেন{' '}
               <a
                 href="https://github.com/mehedyk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-primary hover:underline transition-colors"
               >
-                mehedy
+                মেহেদী
               </a>
             </p>
           </div>

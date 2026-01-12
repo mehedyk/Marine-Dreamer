@@ -104,13 +104,30 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground font-bangla text-center sm:text-left">
-            © 2024 Marine Dreamer. সর্বস্বত্ব সংরক্ষিত।
-          </p>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Anchor className="w-4 h-4" />
-            <span className="text-xs font-bangla">সমুদ্র তোমার অপেক্ষায়</span>
+        <div className="pt-8 border-t border-border/30 space-y-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground font-bangla text-center sm:text-left">
+              © 2024 Marine Dreamer. সর্বস্বত্ব সংরক্ষিত।
+            </p>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Anchor className="w-4 h-4" />
+              <span className="text-xs font-bangla">সমুদ্র তোমার অপেক্ষায়</span>
+            </div>
+          </div>
+          
+          {/* Made by Credit */}
+          <div className="text-center">
+            <p className="text-xs text-muted-foreground">
+              Made by{' '}
+              <a
+                href="https://github.com/mehedyk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary hover:underline transition-colors"
+              >
+                mehedy
+              </a>
+            </p>
           </div>
         </div>
       </div>

@@ -1,101 +1,136 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, HelpCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, Phone, Facebook, Youtube } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Educational Resources", href: "#resources" },
-    { name: "Community", href: "#community" },
+    { name: "আমাদের সম্পর্কে", href: "#about" },
+    { name: "কোর্সসমূহ", href: "#courses" },
+    { name: "বইসমূহ", href: "#books" },
+    { name: "যোগাযোগ", href: "#contact" },
   ];
+
+  const scrollToSection = (href: string) => {
+    setIsMenuOpen(false);
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-3"
     >
-      <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Menu Button */}
-        <Button
-          variant="pill"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="flex items-center gap-2"
-        >
-          <Menu className="w-5 h-5" />
-          <span className="hidden sm:inline">Explore our resources</span>
-        </Button>
+      <nav className="max-w-7xl mx-auto glass rounded-2xl px-4 py-2">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Marine Dreamer Logo"
+              className="w-10 h-10 rounded-full object-cover"
+            />
+            <div className="flex flex-col">
+              <span className="font-display font-bold text-base sm:text-lg leading-tight">
+                Marine Dreamer
+              </span>
+              <span className="text-[10px] sm:text-xs text-muted-foreground leading-tight">
+                স্বপ্ন নয় দায়িত্ব
+              </span>
+            </div>
+          </a>
 
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
-          <svg
-            viewBox="0 0 40 40"
-            className="w-10 h-10"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <circle cx="20" cy="20" r="15" className="text-foreground" />
-            <ellipse cx="20" cy="20" rx="15" ry="6" className="text-foreground" />
-            <path d="M20 5v30" className="text-foreground" />
-          </svg>
-          <span className="font-display font-bold text-lg tracking-tight">
-            Ocean<br />School
-          </span>
-        </a>
-
-        {/* Right Nav */}
-        <div className="flex items-center gap-6">
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-foreground/90 hover:text-foreground transition-colors"
+                onClick={() => scrollToSection(link.href)}
+                className="text-sm font-medium text-foreground/90 hover:text-primary transition-colors font-bangla"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
           </div>
-          <a
-            href="#"
-            className="text-sm font-medium text-foreground/90 hover:text-foreground transition-colors"
-          >
-            Fr
-          </a>
-          <button className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground/10 transition-colors">
-            <HelpCircle className="w-5 h-5" />
-          </button>
-        </div>
-      </nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 glass mt-2 mx-6 rounded-2xl p-6"
-          >
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-lg font-medium hover:text-accent transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          {/* WhatsApp CTA & Mobile Menu */}
+          <div className="flex items-center gap-3">
+            <a
+              href="https://wa.me/8801907483862"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            >
+              <Phone className="w-4 h-4" />
+              <span>WhatsApp</span>
+            </a>
+            
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden w-10 h-10 rounded-full flex items-center justify-center hover:bg-muted transition-colors"
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="flex flex-col gap-2 pt-4 pb-2 border-t border-border/30 mt-3">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.name}
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-left text-base font-medium py-2 px-3 rounded-lg hover:bg-muted transition-colors font-bangla"
+                  >
+                    {link.name}
+                  </button>
+                ))}
+                
+                <div className="flex items-center gap-3 pt-3 border-t border-border/30 mt-2">
+                  <a
+                    href="https://wa.me/8801907483862"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium"
+                  >
+                    <Phone className="w-4 h-4" />
+                    <span>WhatsApp</span>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/share/1Dv3vqJhxW/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"
+                  >
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://youtube.com/@marinedreamer-157"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"
+                  >
+                    <Youtube className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
     </motion.header>
   );
 };

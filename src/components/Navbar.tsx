@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Facebook, Youtube } from "lucide-react";
 import logo from "@/assets/logo.jpg";
+import { posters } from "@/data/siteData";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,14 +11,26 @@ const Navbar = () => {
     { name: "আমাদের সম্পর্কে", href: "#about" },
     { name: "কোর্সসমূহ", href: "#courses" },
     { name: "বইসমূহ", href: "#books" },
+    ...(posters.length ? [{ name: "পোস্টার", href: "#posters" }] : []),
     { name: "যোগাযোগ", href: "#contact" },
   ];
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = useCallback((href: string) => {
+    // Close mobile menu first so scroll position is calculated correctly
     setIsMenuOpen(false);
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
+
+    window.setTimeout(() => {
+      const element = document.querySelector(href) as HTMLElement | null;
+      if (!element) return;
+
+      // Fixed header offset
+      const headerOffset = 96;
+      const top = element.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+      window.history.replaceState(null, "", href);
+      window.scrollTo({ top, behavior: "smooth" });
+    }, 120);
+  }, []);
 
   return (
     <motion.header
@@ -29,7 +42,7 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto glass rounded-2xl px-4 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
+          <a href="#" className="flex items-center gap-3">
             <img
               src={logo}
               alt="Marine Dreamer Logo"
@@ -48,13 +61,17 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <button
+              <a
                 key={link.name}
-                onClick={() => scrollToSection(link.href)}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.href);
+                }}
                 className="text-sm font-medium text-foreground/90 hover:text-primary transition-colors font-bangla"
               >
                 {link.name}
-              </button>
+              </a>
             ))}
           </div>
 
@@ -69,10 +86,12 @@ const Navbar = () => {
               <Phone className="w-4 h-4" />
               <span>WhatsApp</span>
             </a>
-            
+
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden w-10 h-10 rounded-full flex items-center justify-center hover:bg-muted transition-colors"
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -90,15 +109,19 @@ const Navbar = () => {
             >
               <div className="flex flex-col gap-2 pt-4 pb-2 border-t border-border/30 mt-3">
                 {navLinks.map((link) => (
-                  <button
+                  <a
                     key={link.name}
-                    onClick={() => scrollToSection(link.href)}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }}
                     className="text-left text-base font-medium py-2 px-3 rounded-lg hover:bg-muted transition-colors font-bangla"
                   >
                     {link.name}
-                  </button>
+                  </a>
                 ))}
-                
+
                 <div className="flex items-center gap-3 pt-3 border-t border-border/30 mt-2">
                   <a
                     href="https://wa.me/8801907483862"
@@ -136,3 +159,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

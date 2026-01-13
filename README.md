@@ -56,7 +56,7 @@ A professional web platform for Marine Academy admission coaching in Bangladesh,
 
 ## 📄 License
 
-**Copyright © 2024 Marine Dreamer. All Rights Reserved.**
+**Copyright © 2026 Marine Dreamer. All Rights Reserved.**
 
 This project and its contents are proprietary and confidential. Unauthorized copying, modification, distribution, or use of this software, via any medium, is strictly prohibited without explicit written permission from Marine Dreamer.
 
